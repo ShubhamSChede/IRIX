@@ -1,24 +1,15 @@
 const mongoose = require('mongoose');
 
 const exerciseSchema = new mongoose.Schema({
-  type: {
-    type: String,
-    required: true
-  },
-  duration: {
-    type: Number,
-    required: true
-  },
-  exercise_name: {
-    type: String,
-    required: true
-  },
+  type: String,
+  duration: Number,
+  exercise_name: String,
   calories: Number,
   note: String
 });
 
 const workoutSchema = new mongoose.Schema({
-  user: {
+  userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
@@ -27,10 +18,7 @@ const workoutSchema = new mongoose.Schema({
     type: Date,
     required: true
   },
-  steps: {
-    type: Number,
-    required: true
-  },
+  steps: Number,
   exercises: [exerciseSchema]
 }, { timestamps: true });
 

@@ -13,12 +13,6 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  },
-  personalDetails: {
-    age: Number,
-    gender: String,
-    height: Number,
-    weight: Number
   }
 }, { timestamps: true });
 
