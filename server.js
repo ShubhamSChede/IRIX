@@ -6,6 +6,8 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const profileRoutes = require('./routes/profile');
 const workoutRoutes = require('./routes/workout');
+// Add this with your other route imports
+const sleepRoutes = require('./routes/sleep');
 
 const app = express();
 
@@ -20,8 +22,11 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/profile', profileRoutes);
 app.use('/api/workout', workoutRoutes);
+app.use('/api/sleep', sleepRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
