@@ -13,6 +13,10 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
+  },
+  verificationCode: {
+    code: String,
+    expiresAt: Date
   }
 }, { timestamps: true });
 
